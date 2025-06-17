@@ -1,0 +1,38 @@
+@keyframes spin-slow{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+@keyframes tilt-slow{
+    0%, 100%{transform: rotate(-5deg);}
+    50%{ transform: rotate(5deg);}
+}
+
+.spin-slow{
+    animation: spin-slow 30s linear infinite;
+}
+.tilt-slow{
+    animation: tilt-slow 5s ease-in-out infinite;
+}
+
+@keyframes floatAround {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, -10px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  75% {
+    transform: translate(-10px, -5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.float-around {
+  animation: floatAround 26s ease-in-out infinite;
+}
