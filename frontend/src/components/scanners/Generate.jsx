@@ -6,7 +6,7 @@ export default function Generate() {
   const [uniqueKey, setUniqueKey] = useState(Date.now());
   const { theme } = useTheme();
 
-  const link = "https://gatemark.onrender.com/Attendance";
+  const link = "https://gatemark.vercel.app/Attendance";
 
   useEffect(() => {
     const interval = setInterval(() => {
