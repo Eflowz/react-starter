@@ -8,7 +8,7 @@ export default function TodaysAttend() {
 
   const fetchRecords = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/records/today');
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/records/today`);
       const data = await res.json();
       setRecords(data);
       setLoading(false);

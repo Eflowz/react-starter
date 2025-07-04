@@ -24,7 +24,6 @@ app.get('/', (req, res) => {
   res.send('Welcome to the API');
 });
 
-// app.get('/api', recordsRoutes); //we will use the.use to test if the backend is working
 app.use('/api', recordsRoutes);
 app.use('/api', authRoutes);
 

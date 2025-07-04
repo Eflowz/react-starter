@@ -21,7 +21,7 @@ const PreviousAttend = () => {
     const fetchWeekData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:5000/api/attendance/week?weekStart=${startDate}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/attendance/week?weekStart=${startDate}`);
         setData(res.data);
       } catch (error) {
         console.error('Error fetching weekly data:', error);

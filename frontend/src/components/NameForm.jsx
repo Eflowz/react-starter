@@ -17,15 +17,15 @@ export default function NameForm() {
       timestamp: new Date().toISOString(),
     };
 
-    try {
-      const res = await fetch('http://localhost:5000/api/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
+ try {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/submit`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+  
       if (res.ok) {
         setSuccess(true);
         setFullName('');
