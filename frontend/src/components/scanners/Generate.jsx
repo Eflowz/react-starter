@@ -6,7 +6,7 @@ export default function Generate() {
   const [uniqueKey, setUniqueKey] = useState(Date.now());
   const { theme } = useTheme();
 
-  const link = "http://localhost:5173/Attendance";
+  const link = "https://gatemark.onrender.com/Attendance";
 
   useEffect(() => {
     const interval = setInterval(() => {
