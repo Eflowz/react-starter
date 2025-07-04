@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5000',
+  origin: process.env.FRONTEND_URL,
   credentials: true
 }));
 
@@ -73,15 +73,13 @@ app.get('/api/attendance/week', async (req, res) => {
   }
 
   try {
-    // Normalize dates
     const start = new Date(weekStart);
     start.setHours(0, 0, 0, 0);
 
     const end = new Date(start);
-    end.setDate(start.getDate() + 6); // Include up to Saturday
-    end.setHours(23, 59, 59, 999); // Ensure end covers full last day
+    end.setDate(start.getDate() + 6); 
+    end.setHours(23, 59, 59, 999); 
 
-    // Fetch all visitors within the selected week
     const records = await Visitor.find({
       timestamp: {
         $gte: start,
